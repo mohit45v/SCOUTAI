@@ -17,9 +17,9 @@ export const analyzePlayerMedia = async (
 
   const genAI = new GoogleGenerativeAI(apiKey);
   
-  // Use gemini-2.0-flash model and enforce JSON output
+  // Use gemini-2.5-flash model and enforce JSON output
   const model = genAI.getGenerativeModel({
-    model: 'gemini-2.0-flash',
+    model: 'gemini-2.5-flash',
     generationConfig: {
       responseMimeType: 'application/json',
     },
