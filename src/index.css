@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #080f1a;        /* Deep pitch black */
+  --bg-surface: #0d1b2a;        /* Card surface */
+  --bg-elevated: #112236;       /* Modal / elevated card */
+  --bg-hover: #1a2f45;          /* Hover state */
+
+  /* Brand */
+  --brand-green: #39ff14;       /* Neon lime — primary CTA, ratings high */
+  --brand-green-dim: #1a7a00;   /* Dimmed green for backgrounds */
+  --brand-amber: #f59e0b;       /* Amber — warnings, medium ratings */
+  --brand-red: #ef4444;         /* Red — low ratings, injury flag */
+
+  /* Text */
+  --text-primary: #f0f6ff;      /* Near white */
+  --text-secondary: #7a9ab5;    /* Muted blue-grey */
+  --text-disabled: #3a5068;
+
+  /* Borders */
+  --border-subtle: #1e3448;
+  --border-active: #39ff14;
+
+  /* Role chips */
+  --chip-bat: #1e3a5f;          /* Blue — Batsman */
+  --chip-bowl: #3a1a00;         /* Orange-dark — Bowler */
+  --chip-all: #1a3a1a;          /* Green-dark — All-rounder */
+  --chip-wk: #2d1a3a;           /* Purple-dark — Wicket Keeper */
+
+  /* Typography */
+  --font-display: 'Rajdhani', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+/* Custom Scrollbar for Stadium Vibe */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-hover);
+  border-color: var(--brand-green);
+}
+
+/* Custom Cricket Ball Spinner */
+.cricket-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ef4444, #991b1b);
+  position: relative;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+  animation: ball-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.cricket-spinner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.cricket-spinner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+@keyframes ball-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Staggered card mount animation utility */
+.stagger-card-0 { animation-delay: 0ms; }
+.stagger-card-1 { animation-delay: 60ms; }
+.stagger-card-2 { animation-delay: 120ms; }
+.stagger-card-3 { animation-delay: 180ms; }
+.stagger-card-4 { animation-delay: 240ms; }
+.stagger-card-5 { animation-delay: 300ms; }
+.stagger-card-6 { animation-delay: 360ms; }
+.stagger-card-7 { animation-delay: 420ms; }
+.stagger-card-8 { animation-delay: 480ms; }
+.stagger-card-9 { animation-delay: 540ms; }

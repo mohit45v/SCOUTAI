@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+functions/node_modules/
+
+# Build
+dist/
+functions/lib/
+
+# Secrets — CRITICAL
+.env.local
+.env.*.local
+functions/sa-key.json
+*-service-account*.json
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# OS
+.DS_Store
+*.swp

@@ -1,0 +1,8 @@
+# Ignore git and common directories
+.git/
+node_modules/
+functions/node_modules/
+
+# Do NOT ignore .env.local so Cloud Build has access to Vite variables
+# (This is standard for static single page apps built inside containers)
+!.env.local
