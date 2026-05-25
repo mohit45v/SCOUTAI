@@ -19,3 +19,9 @@ firebase-debug.log
 # OS
 .DS_Store
 *.swp
+
+# Test Coverage
+coverage/
+
+# TS build cache
+*.tsbuildinfo
